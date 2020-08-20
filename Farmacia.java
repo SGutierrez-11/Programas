@@ -1,0 +1,65 @@
+import java.util.Scanner;
+
+public class Farmacia{
+public static void main(String[] args){
+	Scanner lector= new Scanner (System.in);
+	
+	System.out.println("Bienvenido, seleccione que dia es hoy:");
+	
+	int dia = lector.nextInt();
+	
+	System.out.println("Total de la compra:");
+	
+	double precio = lector.nextInt();
+	
+	System.out.println("Forma de pago: (Escriba 0 si es de contado o 1 si es con tarjeta)");
+	
+	int pago = lector.nextInt();
+	
+	System.out.println("Escriba el numero de cedula:");
+	
+	int cedula = lector.nextInt();
+	
+if (pago==0){
+	double descuento = precio*0.05;
+	System.out.println("Su descuento es de: " + (descuento));
+	System.out.println("El total a pagar es: " + (precio-descuento));
+	
+} else {
+	double aumento = precio*0.03;
+	System.out.println("Tiene un aumento de: " + (aumento));
+	System.out.println("El total a pagar es: " + (precio+aumento));
+	
+}
+	
+	switch (dia) {
+		
+		case 6:
+		if (cedula%2==0){
+			System.out.println("Por el dia de hoy, te llevas un té de durazno gratis");
+		}else{
+			System.out.println("Por el dia de hoy, te llevas una Coca cola de 750 ml gratis");
+		}
+		
+		break;
+		
+		case 9:
+		System.out.println("Por el dia de hoy, te llevas un descuento del 9% sobre el valor de tu proxima compra");
+		
+		break;
+		
+		case 24:
+		if (cedula%2==0){
+			System.out.println("Por el dia de hoy, te llevas un gel antibacterial gratis");
+		}else{
+			System.out.println("Por el dia de hoy, te llevas un sobre de Dolex gratis");
+		}
+		
+		break;
+		
+		default:
+		System.out.println("Que tengas un buen dia");
+		
+	}
+}
+}
